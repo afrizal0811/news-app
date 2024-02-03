@@ -1,14 +1,14 @@
 import { Input } from 'antd'
 
-const { Search } = Input
+const AntdSearchInput = ({ setSearchText }: any) => {
+  const { Search } = Input
 
-const AntdSearchInput = () => {
   return (
     <Search
       placeholder='Cari Berita'
-      loading
       enterButton
       style={{ width: '300px' }}
+      onSearch={(e) => setSearchText(e)}
     />
   )
 }

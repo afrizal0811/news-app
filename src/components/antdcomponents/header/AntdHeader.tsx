@@ -1,13 +1,11 @@
 import { Layout, Menu } from 'antd'
-import { category } from '../../../constants/options'
-import AntdDropdown from '../dropdown/AntdDropdown'
 import AntdSearchInput from '../search_input/AntdSearchInput'
-const AntdHeader = () => {
+import { items } from './renderData'
+import { useState } from 'react'
+const AntdHeader = ({ setSearchText }: any) => {
   const { Header } = Layout
-  const renderMenuItems = (data: any) => {
-    return <Menu.Item>{data}</Menu.Item>
-  }
-
+  const [key, setKey] = useState<any>('')
+  console.log(key)
   return (
     <Layout>
       <Header
@@ -20,13 +18,10 @@ const AntdHeader = () => {
         <Menu
           theme='dark'
           mode='horizontal'
+          items={items(setKey)}
           style={{ flex: 1, minWidth: 0 }}
-        >
-          {renderMenuItems('All News')}
-          {renderMenuItems('Top Headlines')}
-          {renderMenuItems(<AntdDropdown category={category} />)}
-        </Menu>
-        <AntdSearchInput />
+        />
+        <AntdSearchInput setSearchText={setSearchText} />
       </Header>
     </Layout>
   )

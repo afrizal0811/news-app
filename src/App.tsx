@@ -1,9 +1,9 @@
 import Menu from './menu/Menu'
-import Header from './components/antdcomponents/header/AntdHeader';
+// import Header from './components/antdcomponents/header/AntdHeader';
 function App() {
   return (
     <div className='App'>
-      <Header />
+      {/* <Header /> */}
       <Menu />
     </div>
   )
