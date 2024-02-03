@@ -1,2 +1,3 @@
 export const baseUrl = 'https://newsapi.org/v2'
-export const emptyImage = './news.png' 
+export const emptyImage = './images/news.png' 
+export const loader = './images/loader.gif' 
