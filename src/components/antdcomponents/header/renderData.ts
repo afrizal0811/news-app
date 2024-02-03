@@ -1,20 +1,19 @@
-import type { MenuProps } from 'antd'
-import { category } from '../../../constants/options'
+// import { category } from '../../../constants/options'
 
-export const items: any = (setKey: any) => [
+export const items: any = (setNewsType: any) => [
   {
     label: 'All News',
     key: 'everything',
-    onClick: (e: any) => setKey(e.key),
+    onClick: (e: any) => setNewsType(e.key),
   },
   {
     label: 'Top Headlines',
     key: 'top-headlines',
-    onClick: (e: any) => setKey(e.key),
+    onClick: (e: any) => setNewsType(e.key),
   },
-  {
-    label: 'Category',
-    key: 'category',
-    children: category,
-  },
+//   {
+//     label: 'Category',
+//     key: 'category',
+//     children: category,
+//   },
 ]

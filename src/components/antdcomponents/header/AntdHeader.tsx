@@ -1,11 +1,9 @@
 import { Layout, Menu } from 'antd'
 import AntdSearchInput from '../search_input/AntdSearchInput'
 import { items } from './renderData'
-import { useState } from 'react'
-const AntdHeader = ({ setSearchText }: any) => {
+const AntdHeader = (props: any) => {
   const { Header } = Layout
-  const [key, setKey] = useState<any>('')
-  console.log(key)
+  const { setNewsType } = props
   return (
     <Layout>
       <Header
@@ -18,10 +16,11 @@ const AntdHeader = ({ setSearchText }: any) => {
         <Menu
           theme='dark'
           mode='horizontal'
-          items={items(setKey)}
+          items={items(setNewsType)}
+          defaultSelectedKeys={['everything']}
           style={{ flex: 1, minWidth: 0 }}
         />
-        <AntdSearchInput setSearchText={setSearchText} />
+        <AntdSearchInput {...props} />
       </Header>
     </Layout>
   )
