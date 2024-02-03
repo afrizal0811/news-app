@@ -1,0 +1,1 @@
+export const DATE_FULL_FORMAT_WITHSPACE = 'DD MMMM YYYY'
