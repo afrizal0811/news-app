@@ -1,6 +1,7 @@
 import { Input } from 'antd'
+import { HeaderInf } from '../../../constants/type'
 
-const AntdSearchInput = (props: any) => {
+const AntdSearchInput = (props: HeaderInf) => {
   const { setSearchText, loading } = props
   const { Search } = Input
 

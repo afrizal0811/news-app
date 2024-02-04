@@ -1,6 +1,6 @@
 // import { category } from '../../../constants/options'
-
-export const items: any = (setNewsType: any) => [
+import { Dispatch, MouseEvent, SetStateAction } from 'react'
+export const items = (setNewsType: Dispatch<SetStateAction<string>>) => [
   {
     label: 'All News',
     key: 'everything',
@@ -11,9 +11,9 @@ export const items: any = (setNewsType: any) => [
     key: 'top-headlines',
     onClick: (e: any) => setNewsType(e.key),
   },
-//   {
-//     label: 'Category',
-//     key: 'category',
-//     children: category,
-//   },
+  //   {
+  //     label: 'Category',
+  //     key: 'category',
+  //     children: category,
+  //   },
 ]

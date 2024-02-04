@@ -1,7 +1,8 @@
 import { List } from 'antd'
 import ItemsList from './ItemsList'
 import { getListData } from './renderData'
-const AntdList = (props: any) => {
+
+const AntdList = (props: { articles: string[] }) => {
   const { articles } = props
 
   return (

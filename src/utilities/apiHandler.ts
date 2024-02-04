@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getApi = async (URL: any) => {
+export const getApi = async (URL: string) => {
   const url = await axios
     .get(URL)
     .then((response) => {

@@ -7,16 +7,16 @@ import { getApi } from '../utilities/apiHandler'
 import { filterResponses } from '../utilities/filter'
 import './style.css'
 const Menu = () => {
-  const [loading, setLoading] = useState<any>(true)
-  const [articles, setArticles] = useState<any>([])
-  const [searchText, setSearchText] = useState<any>('')
-  const [newsType, setNewsType] = useState<any>('everything')
+  const [loading, setLoading] = useState<boolean>(true)
+  const [articles, setArticles] = useState<string[]>([])
+  const [searchText, setSearchText] = useState<string>('a')
+  const [newsType, setNewsType] = useState<string>('everything')
+  const search = searchText ? searchText : 'a'
 
-  const search = searchText ? searchText : ''
   useEffect(() => {
     const fetchData = async () => {
       const response = await getApi(
-        `${baseUrl}/${newsType}?q=${search}&sources=bbc-news&apiKey=${process.env.REACT_APP_API_KEY}`
+        `${baseUrl}/${newsType}?q=${search}&apiKey=${process.env.REACT_APP_API_KEY}`
       )
       const filteredArticles = response.articles.filter(filterResponses)
       setLoading(false)
@@ -24,10 +24,11 @@ const Menu = () => {
     }
     setLoading(true)
     fetchData()
-  }, [newsType, searchText])
+  }, [newsType, search])
+
   const renderLoading = <Loader />
   const renderArticle = <AntdList articles={articles} />
-  console.log()
+
   return (
     <div>
       <AntdHeader

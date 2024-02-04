@@ -1,7 +1,8 @@
 import { Layout, Menu } from 'antd'
+import { HeaderInf } from '../../../constants/type'
 import AntdSearchInput from '../search_input/AntdSearchInput'
 import { items } from './renderData'
-const AntdHeader = (props: any) => {
+const AntdHeader = (props: HeaderInf) => {
   const { Header } = Layout
   const { setNewsType } = props
   return (
