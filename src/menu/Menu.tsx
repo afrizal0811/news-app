@@ -1,7 +1,7 @@
+import { Spin } from 'antd'
 import { useEffect, useState } from 'react'
 import AntdHeader from '../components/antdcomponents/header/AntdHeader'
 import AntdList from '../components/antdcomponents/list/AntdList'
-import Loader from '../components/loader/Loader'
 import { baseUrl } from '../constants/urls'
 import { getApi } from '../utilities/apiHandler'
 import { filterResponses } from '../utilities/filter'
@@ -26,7 +26,12 @@ const Menu = () => {
     fetchData()
   }, [newsType, search])
 
-  const renderLoading = <Loader />
+  const renderLoading = (
+    <Spin
+      size='large'
+      fullscreen
+    />
+  )
   const renderArticle = <AntdList articles={articles} />
 
   return (
